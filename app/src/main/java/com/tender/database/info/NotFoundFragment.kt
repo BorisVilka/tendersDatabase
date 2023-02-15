@@ -1,0 +1,58 @@
+package com.tender.database.info
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.tender.database.info.databinding.FragmentNotFoundBinding
+
+
+class NotFoundFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+
+        }
+        name = arguments?.getString("key","\uD83C\uDDED\uD83C\uDDFA Hungary").toString()
+        id = arguments?.getString("id","").toString()
+    }
+    private lateinit var name: String
+    private lateinit var id: String
+    private lateinit var navController: NavController
+    private lateinit var binding: FragmentNotFoundBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentNotFoundBinding.inflate(inflater,container,false)
+        navController = Navigation.findNavController(requireActivity(),R.id.fragmentContainerView)
+        binding.textView8.setOnClickListener {
+            navController.popBackStack()
+            navController.navigate(R.id.loaderFragment, Bundle().apply {
+                putString("key",name)
+                putString("id",id)
+             }
+            )
+        }
+        binding.textView6.text = name
+        binding.textView7.text = "Tender ID: $id"
+        return binding.root
+    }
+
+    companion object {
+
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            NotFoundFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
+}

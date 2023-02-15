@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.tender.database.info.StartFragment"
+        android:label="StartFragment" />
+    <fragment
+        android:id="@+id/procurentFragment"
+        android:name="com.tender.database.info.ProcurentFragment"
+        android:label="fragment_procurent"
+        tools:layout="@layout/fragment_procurent" />
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.tender.database.info.InputFragment"
+        android:label="InputFragment" />
+    <fragment
+        android:id="@+id/loaderFragment"
+        android:name="com.tender.database.info.LoaderFragment"
+        android:label="fragment_loader"
+        tools:layout="@layout/fragment_loader" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.tender.database.info.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/notFoundFragment"
+        android:name="com.tender.database.info.NotFoundFragment"
+        android:label="fragment_not_found"
+        tools:layout="@layout/fragment_not_found" />
+    <fragment
+        android:id="@+id/tenderFragment"
+        android:name="com.tender.database.info.TenderFragment"
+        android:label="fragment_tender"
+        tools:layout="@layout/fragment_tender" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.tender.database.info.FirstFragment"
+        android:label="FirstFragment" />
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.tender.database.info.PrivacyFragment"
+        android:label="PrivacyFragment" />
+</navigation>
